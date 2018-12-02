@@ -1,5 +1,5 @@
 # sweetlou
-Demo QnA bot for http://universaldirect.com/help-center with the comic chit-chat and Editorial.
+Demo QnA bot for http://universaldirect.com/help-center with the comic chit-chat, plus editorial.
 
 ## Requirements
 The pakages.config is pretty self explenatory but I marked **bold** a few things I had to make a little effort on.
