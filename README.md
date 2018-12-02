@@ -10,8 +10,8 @@ The pakages.config is pretty self explenatory but I marked **bold** a few things
 ### For local deployment I recommend
 **Note:** The Utils.GetAppSetting(string key) method is for bots running on Azure, to run your bot on local w/ AppSettings in Web.config use ConfigurationManager.AppSettings["key"]. Replace Utils.GetAppSetting("key") in QnAMakerDialog as I did.
 
-1. **.NET Framework 4.7** (download link)[https://dotnet.microsoft.com/download/dotnet-framework-runtime]
-2. (Visual Studio 2017)[https://visualstudio.microsoft.com/downloads/]
+1. [**.NET Framework 4.7**](https://dotnet.microsoft.com/download/dotnet-framework-runtime)
+2. [Visual Studio 2017](https://visualstudio.microsoft.com/downloads)
 3. VS Extensions & Updates: 
   * Enterprise Bot
   * Builder V4 SDK Template
@@ -58,7 +58,7 @@ The pakages.config is pretty self explenatory but I marked **bold** a few things
 29. System.Spatial 5.7.0 
 30. WindowsAzure.Storage 7.2.1 
 
-Install the (Bot Builder Tools)[https://github.com/Microsoft/botbuilder-tools] as seperate cmds. 
+Install the [Bot Builder Tools](https://github.com/Microsoft/botbuilder-tools) as seperate cmds. 
 ```
 npm install -g chatdown 
 npm install -g msbot 
