@@ -27,10 +27,6 @@ namespace Microsoft.Bot.Sample.QnABot
             var message = await result;
 
             // The Utils.GetAppSetting(string key) method is for bots running on Azure 
-            /* var qnaAuthKey = GetSetting("QnAAuthKey"); 
-             * var qnaKBId = Utils.GetAppSetting("QnAKnowledgebaseId");
-             * var endpointHostName = Utils.GetAppSetting("QnAEndpointHostName"); */
-
             // Run your bot application on local and access settings from your web.config file
             var qnaAuthKey = AppSettings("QnAAuthKey");
             var qnaKBId = ConfigurationManager.AppSettings["QnAKnowledgebaseId"];
@@ -59,16 +55,6 @@ namespace Microsoft.Bot.Sample.QnABot
         }
 
         // The Utils.GetAppSetting(string key) method is for bots running on Azure 
-        /*public static string GetSetting(string key)
-        {
-            var value = Utils.GetAppSetting(key);
-            if (String.IsNullOrEmpty(value) && key == "QnAAuthKey")
-            {
-                value = Utils.GetAppSetting("QnASubscriptionKey"); // QnASubscriptionKey for backward compatibility with QnAMaker (Preview)
-            }
-            return value;
-        }*/
-
         // Run your bot application on local and access settings from your web.config file
         public static string AppSettings(string key)
         {
@@ -90,9 +76,7 @@ namespace Microsoft.Bot.Sample.QnABot
         // Required: subscriptionKey, knowledgebaseId, 
         // Optional: defaultMessage, scoreThreshold[Range 0.0 – 1.0]
         // The Utils.GetAppSetting(string key) method is for bots running on Azure
-        /* public BasicQnAMakerPreviewDialog() : base(new QnAMakerService(new QnAMakerAttribute(RootDialog.GetSetting("QnAAuthKey"), Utils.GetAppSetting("QnAKnowledgebaseId"), "No good match in FAQ.", 0.5)))
-         */
-        //Run your bot application on local and access settings from your web.config file
+        // Run your bot application on local and access settings from your web.config file
         public BasicQnAMakerPreviewDialog() : base(new QnAMakerService(new QnAMakerAttribute(RootDialog.AppSettings("QnAAuthKey"), ConfigurationManager.AppSettings["QnAKnowledgebaseId"], "No good match in FAQ.", 0.5)))
         { }
     }
@@ -106,9 +90,7 @@ namespace Microsoft.Bot.Sample.QnABot
         // Required: qnaAuthKey, knowledgebaseId, endpointHostName
         // Optional: defaultMessage, scoreThreshold[Range 0.0 – 1.0]
         // The Utils.GetAppSetting(string key) method is for bots running on Azure
-        /* public BasicQnAMakerDialog() : base(new QnAMakerService(new QnAMakerAttribute(RootDialog.GetSetting("QnAAuthKey"), Utils.GetAppSetting("QnAKnowledgebaseId"), "No good match in FAQ.", 0.5, 1, Utils.GetAppSetting("QnAEndpointHostName"))))
-         */
-        //Run your bot application on local and access settings from your web.config file
+        // Run your bot application on local and access settings from your web.config file
         public BasicQnAMakerDialog() : base(new QnAMakerService(new QnAMakerAttribute(RootDialog.AppSettings("QnAAuthKey"), ConfigurationManager.AppSettings["QnAKnowledgebaseId"], "No good match in FAQ.", 0.5, 1, ConfigurationManager.AppSettings["QnAEndpointHostName"])))
         { }
     }
