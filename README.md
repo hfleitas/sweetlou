@@ -2,38 +2,72 @@
 QnA bot for http://universaldirect.com/help-center with Comic chit-chat and Editorial.
 
 ## Requirements
-1. **.Net Framework 4.7**
-2. Autofac3.5.2
-3. Chronic.Signed0.3.2
-4. EntityFramework6.1.3
-5. Microsoft.AspNet.WebApi5.2.3
-6. Microsoft.AspNet.WebApi.Client5.2.3
-7. Microsoft.AspNet.WebApi.Core5.2.3
-8. Microsoft.AspNet.WebApi.WebHost5.2.3
-9. Microsoft.Azure.DocumentDB1.22.0
-10. Microsoft.Azure.KeyVault.Core1.0.0
-11. Microsoft.Bot.Builder3.15.2.2
-12. **Microsoft.Bot.Builder.Azure3.15.2.2**
-13. Microsoft.Bot.Builder.CognitiveServices1.1.7
-14. Microsoft.Bot.Builder.History3.15.2.2
-15. Microsoft.Bot.Connector3.15.2.2
-16. Microsoft.CodeDom.Providers.DotNetCompilerPlatform1.0.1
-17. Microsoft.Data.Edm5.7.0
-18. Microsoft.Data.OData5.7.0
-19. Microsoft.Data.Services.Client5.7.0
-20. Microsoft.IdentityModel.Logging1.1.4
-21. Microsoft.IdentityModel.Protocol.Extensions1.0.4.403061554
-22. Microsoft.IdentityModel.Protocols2.1.4
-23. Microsoft.IdentityModel.Protocols.OpenIdConnect2.1.4
-24. Microsoft.IdentityModel.Tokens5.1.4
-25. Microsoft.Net.Compilers1.2.1
-26. Microsoft.Rest.ClientRuntime2.3.2
-27. Microsoft.WindowsAzure.ConfigurationManager3.2.1
-28. Newtonsoft.Json9.0.1
-29. System.IdentityModel.Tokens.Jwt5.1.4
-30. System.Spatial5.7.0
-31. WindowsAzure.Storage7.2.1
+The pakages.config is pretty self explenatory but I marked **bold** a few things I had to make a little effort on.
 
+1. Create an Azure Resource Group and Storage Account (Standard General Purpose v2)
+2. [qnamaker.ai](http://qnamaker.ai)
+
+### For local deployment I recommend
+**Note:** The Utils.GetAppSetting(string key) method is for bots running on Azure, to run your bot on local w/ AppSettings in Web.config use ConfigurationManager.AppSettings["key"]. Replace Utils.GetAppSetting("key") in QnAMakerDialog as I did.
+
+1. **.NET Framework 4.7**
+2. VS 2017
+3. VS Extensions & Updates: 
+  * Enterprise Bot
+  * Builder V4 SDK Template
+4. VS Tools & Features (I have the following installed)
+  * ASP.NET and web development
+  * Azure development
+  * Python development (not req.)
+  * Node.js development (not req.)
+  * Data storage and processing
+  * Data science and analytical applications (not req.)
+5. Individual components:
+  * .NET Framework 4.7 SDK and Targeting Pack
+  * .NET Framework 4.7.2 SDK and Targeting Pack
+
+### Packages.config (NuGet Package Manager)
+1. Autofac 3.5.2
+2. Chronic.Signed 0.3.2
+3. EntityFramework 6.1.3
+4. Microsoft.AspNet.WebApi 5.2.3
+5. Microsoft.AspNet.WebApi.Client 5.2.3
+6. Microsoft.AspNet.WebApi.Core 5.2.3
+7. Microsoft.AspNet.WebApi.WebHost 5.2.3
+8. Microsoft.Azure.DocumentDB 1.22.0
+9. Microsoft.Azure.KeyVault.Core 1.0.0
+10. Microsoft.Bot.Builder 3.15.2.2 
+11. **Microsoft.Bot.Builder.Azure 3.15.2.2** 
+12. Microsoft.Bot.Builder.CognitiveServices 1.1.7 
+13. Microsoft.Bot.Builder.History 3.15.2.2 
+14. Microsoft.Bot.Connector 3.15.2.2 
+15. Microsoft.CodeDom.Providers.DotNetCompilerPlatform 1.0.1 
+16. Microsoft.Data.Edm 5.7.0 
+17. Microsoft.Data.OData 5.7.0 
+18. Microsoft.Data.Services.Client 5.7.0 
+19. Microsoft.IdentityModel.Logging 1.1.4 
+20. Microsoft.IdentityModel.Protocol.Extensions 1.0.4.403061554 
+21. Microsoft.IdentityModel.Protocols 2.1.4 
+22. Microsoft.IdentityModel.Protocols.OpenIdConnect 2.1.4 
+23. Microsoft.IdentityModel.Tokens 5.1.4 
+24. Microsoft.Net.Compilers 1.2.1 
+25. Microsoft.Rest.ClientRuntime 2.3.2 
+26. Microsoft.WindowsAzure.ConfigurationManager 3.2.1 
+27. Newtonsoft.Json 9.0.1 
+28. System.IdentityModel.Tokens.Jwt 5.1.4 
+29. System.Spatial 5.7.0 
+30. WindowsAzure.Storage 7.2.1 
+
+Install the (Bot Builder Tools)[https://github.com/Microsoft/botbuilder-tools] as seperate cmds. 
+```
+npm install -g chatdown 
+npm install -g msbot 
+npm install -g ludown 
+npm install -g luis-apis 
+npm install -g qnamaker 
+npm install -g botdispatch 
+npm install -g luisgen
+```
 
 ## Use Azure app service editor
 
